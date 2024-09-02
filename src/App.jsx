@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="body">
       {isSubmitted ? (
-        <h1>Hello, {name}! Hi bro</h1>
+        <h1>Hello, {name}! Welcome!</h1>
       ) : (
         <InputName onSubmit={handleNameSubmit} />
       )}

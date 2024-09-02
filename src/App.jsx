@@ -1,18 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, {useState} from 'react';
+import InputName from './components/InputName.jsx';
+import './App.css';
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [name, setName] = useState('');
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-  return (
-    <>
+    const handleNameSubmit = (userName) => {
+      setName(userName);
+      setIsSubmitted(true);
+    };
+
+    return (
       <div className='body'>
-        <h1>Hello World!!!</h1>
+        {isSubmitted ? (
+          <h1>Hello, {name}!</h1>
+        ) : (
+          <InputName onSubmit={handleNameSubmit}/>
+        )}
       </div>
-    </>
-  )
+    )
 }
 
-export default App
+export default App;
+
